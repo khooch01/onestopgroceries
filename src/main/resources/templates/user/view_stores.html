@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User View Stores</title>
+    <link rel="stylesheet" th:href="@{/user_view_stores.css}">
+</head>
+<body>
+    <h1>User View Stores</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Localities Served</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over the list of stores -->
+            <tr th:each="store : ${stores}">
+                <td th:text="${store.name}"></td>
+                <td th:text="${store.phoneNumber}"></td>
+                <td th:text="${store.localities}"></td>
+                <td><a th:href="@{'/user/stores/' + ${store.id}}">View</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Button to admin login page -->
+    <p><a th:href="@{/admin/login}">Admin Login</a></p>
+</body>
+</html>
