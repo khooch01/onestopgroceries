@@ -34,4 +34,5 @@ public class StoreService {
     public void deleteStore(Long id) {
         storeRepository.deleteById(id);
     }
+
 }

@@ -15,6 +15,11 @@ public class LoginController {
 
     private static final Logger logger = LogManager.getLogger(LoginController.class);
 
+    @GetMapping("/")
+    public String landingPage() {
+        return "login";
+    }
+
     @GetMapping("/login")
     public String login() {
         return "login";

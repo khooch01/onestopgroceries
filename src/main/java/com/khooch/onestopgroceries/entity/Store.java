@@ -1,8 +1,11 @@
 package com.khooch.onestopgroceries.entity;
 
+import com.khooch.onestopgroceries.validation.ValidLocalities;
+import com.khooch.onestopgroceries.validation.ValidName;
+import com.khooch.onestopgroceries.validation.ValidPhoneNumber;
+
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "stores")
@@ -12,14 +15,17 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "Name cannot be empty")
+
+    @NotBlank(message = "Name is required")
+    @ValidName
     private String name;
 
-    @NotEmpty(message = "Phone number cannot be empty")
-    @Pattern(regexp = "^\\d{10}$", message = "Phone number must be 10 digits")
+    @NotBlank(message = "Phone number is required")
+    @ValidPhoneNumber
     private String phoneNumber;
 
-    @NotEmpty(message = "Localities cannot be empty")
+    @NotBlank(message = "Localities served is required")
+    @ValidLocalities
     private String localities;
 
     // Getters and setters

@@ -7,12 +7,16 @@
     <link rel="stylesheet" th:href="@{/store_details.css}">
 </head>
 <body>
-    <h1>Store Details</h1>
+<div class="form">
+    <div class="header">
+        <h1>Store Details</h1>
+        <a th:href="@{/user/stores}">Back to Stores</a>
+    </div>
     <div>
         <p><strong>Name:</strong> <span th:text="${store.name}"></span></p>
         <p><strong>Phone Number:</strong> <span th:text="${store.phoneNumber}"></span></p>
         <p><strong>Localities Served:</strong> <span th:text="${store.localities}"></span></p>
     </div>
-    <p><a th:href="@{/user/stores}">Back to Stores</a></p>
+</div>
 </body>
 </html>

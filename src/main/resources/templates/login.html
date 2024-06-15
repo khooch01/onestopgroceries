@@ -15,13 +15,16 @@
         <div>
             <label>Password:</label>
             <input type="password" name="password"/>
+        </div> 
+
+        <div th:if="${param.error}">
+            <p style="color:red;">Invalid username or password</p>
         </div>
+        
         <div>
             <button type="submit">Sign in</button>
         </div>
-        <div th:if="${error}">
-            <p style="color:red;">Invalid username or password</p>
-        </div>
+
         <div>
             <a th:href="@{/registration}">
                 <button type="button" class="register-button">Register</button>

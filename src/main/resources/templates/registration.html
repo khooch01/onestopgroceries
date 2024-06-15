@@ -15,18 +15,17 @@
         <div>
             <label>Password:</label>
             <input type="password" name="password" required/>
+        </div>        
+        <div th:if="${param.success}">
+            <p style="color:rgb(49, 189, 6);">Registration successful!</p>
         </div>
         <div>
             <button type="submit">Register</button>
         </div>
         <div>
-            <a th:href="@{/login}">
-                <button type="button" class="back-button">Back to Login</button>
-            </a>
+            <p>Already have an account? <a th:href="@{/login}">Login here</a></p>
         </div>
-        <div th:if="${param.success}">
-            <p style="color:green;">Registration successful!</p>
-        </div>
+
     </form>
 </body>
 </html>

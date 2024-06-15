@@ -8,7 +8,14 @@
 </head>
 <body>
     <h1>User View Stores</h1>
-    <table>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+        <!-- Check if stores list is empty -->
+    <div th:if="${#lists.isEmpty(stores)}">
+        <p>No stores found.</p>
+    </div>
+    <table th:if="${not #lists.isEmpty(stores)}">
         <thead>
             <tr>
                 <th>Name</th>
@@ -27,7 +34,8 @@
             </tr>
         </tbody>
     </table>
-    <!-- Button to admin login page -->
-    <p><a th:href="@{/admin/login}">Admin Login</a></p>
+    <form th:action="@{/admin/stores}" method="get">
+        <button type="submit">Admin Login</button>
+    </form>
 </body>
 </html>

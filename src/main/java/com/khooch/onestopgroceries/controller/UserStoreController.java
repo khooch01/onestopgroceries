@@ -31,4 +31,6 @@ public class UserStoreController {
         model.addAttribute("store", store);
         return "user/store_details";
     }
+
+    
 }

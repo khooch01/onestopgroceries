@@ -64,10 +64,7 @@ a:hover {
     color: #0056b3;
 }
 
-div[th\\:if] {
-    color: red;
-    margin-bottom: 10px;
-}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -83,4 +80,8 @@ div[th\\:if] {
 }
 .header a:hover {
     color: #0056b3;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
 }
