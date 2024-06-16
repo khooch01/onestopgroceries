@@ -27,7 +27,7 @@ public class WebSecurityConfiguration {
         http.authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/admin/login").permitAll()
                 .requestMatchers("/admin/**").hasAuthority("ADD_STORE")
-                .requestMatchers("/user/**").permitAll()
+                .requestMatchers("/user/**").hasAuthority("VIEW_STORE")
                 .requestMatchers("/**").permitAll()
                 .anyRequest().authenticated()
             )
