@@ -1,6 +1,9 @@
 package com.khooch.onestopgroceries.entity;
 
+import com.khooch.onestopgroceries.validation.PasswordComplexity;
+import com.khooch.onestopgroceries.validation.UsernameLength;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Collection;
 
 @Entity
@@ -11,9 +14,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Username is required")
+    @UsernameLength
     @Column(nullable = false, unique = true)
     private String username;
 
+    @NotBlank(message = "Password is required")
+    @PasswordComplexity
     @Column(nullable = false)
     private String password;
 

@@ -57,3 +57,7 @@ p {
     color: rgb(0, 0, 0);
     font-size: 14px;
 }
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
