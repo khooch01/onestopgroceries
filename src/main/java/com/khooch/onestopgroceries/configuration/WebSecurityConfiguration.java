@@ -17,7 +17,6 @@ public class WebSecurityConfiguration {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

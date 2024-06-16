@@ -32,7 +32,7 @@ public class AdminStoreController {
     }
 
     @PostMapping("/add")
-    public String addStore(@Valid @ModelAttribute("store") Store store, BindingResult bindingResult, Model model) {
+    public String addStore(@Valid @ModelAttribute("store") Store store, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "admin/add_store";
         }
@@ -48,7 +48,7 @@ public class AdminStoreController {
     }
 
     @PostMapping("/edit/{id}")
-    public String editStore(@PathVariable Long id, @Valid @ModelAttribute("store") Store store, BindingResult bindingResult, Model model) {
+    public String editStore(@PathVariable Long id, @Valid @ModelAttribute("store") Store store, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "admin/edit_store";
         }
@@ -62,7 +62,7 @@ public class AdminStoreController {
         storeService.deleteStore(id);
         return "redirect:/admin/stores";
     }
-    
+
     @GetMapping("/{id}")
     public String viewStoreDetails(@PathVariable Long id, Model model) {
         Store store = storeService.getStoreById(id);
