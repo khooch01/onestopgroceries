@@ -1,6 +1,5 @@
 package com.khooch.onestopgroceries.entity;
 
-import com.khooch.onestopgroceries.validation.PasswordComplexity;
 import com.khooch.onestopgroceries.validation.UsernameLength;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -20,7 +19,6 @@ public class User {
     private String username;
 
     @NotBlank(message = "Password is required")
-    @PasswordComplexity
     @Column(nullable = false)
     private String password;
 
